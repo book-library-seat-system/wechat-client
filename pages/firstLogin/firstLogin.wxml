@@ -1,0 +1,15 @@
+<view class = "header">
+  <text>欢迎使用图书馆座位预约系统</text>
+</view>
+<view class = "main">
+  <text >首次使用请绑定NetID\n</text>
+  <form>
+    <block class="line" >
+      <text display="id">NetID: </text> <input class="inputID" placeholder="请输入NetID"></input>
+    </block>
+    <block class="line">
+      <text class="password">密码</text> <input class="inputPW" password="true" placeholder="请输入密码"></input>
+      <button class="bindBtn" >绑定</button>
+    </block>
+  </form>
+</view>

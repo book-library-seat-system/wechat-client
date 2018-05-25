@@ -1,0 +1,42 @@
+/* pages/firstLogin/firstLogin.wxss */
+.header{
+  margin-top: 10px;
+  text-align: center;
+  width:100%;
+}
+
+.bindID{
+  margin-top: 10px;
+  text-align: center;
+  width: 100%;
+}
+
+.bindBtn {
+  width: 100px;
+  text-align: center;
+}
+
+.id {
+  border: 1px;
+}
+
+.line {
+  display: inline;
+  margin:10px;
+}
+
+.inputID {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border:  1px solid black;
+}
+
+.inputPW {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border:  1px solid black;
+}
+
+.main {
+  margin-top: 10px;
+}
