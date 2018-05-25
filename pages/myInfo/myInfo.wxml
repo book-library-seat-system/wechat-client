@@ -1,2 +1,21 @@
 <!--pages/myInfo/myInfo.wxml-->
-<text>pages/myInfo/myInfo.wxml</text>
+
+<view class="picView">
+  <image src="{{userInfo.avatarUrl}}" background-size="cover" class="profilePhoto"></image>
+</view>
+
+
+<view class="mainArea">
+  <view>
+    <text>我的预约记录</text>
+  </view>
+  <view>
+    <text>履约次数</text>
+  </view>
+  <view>
+    <text>违约次数</text>
+  </view>
+  <view>
+    <text>待履约次数</text>
+  </view>
+</view>

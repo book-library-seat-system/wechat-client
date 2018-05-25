@@ -1,1 +1,16 @@
 /* pages/myInfo/myInfo.wxss */
+.profilePhoto{
+  height: 100px;
+  width: 100px;
+  border-radius: 50px;
+  border: 2px solid #FFFFFF;
+}
+
+.picView {
+  display: flex;
+  justify-content: center;
+}
+
+.mainArea {
+  margin-left: 40px;
+}
