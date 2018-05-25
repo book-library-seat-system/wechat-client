@@ -1,1 +1,21 @@
 /* pages/mainPage/mainPage.wxss */
+block {
+  height: 100px;
+  width:100%;
+}
+.aaa .bbb {
+  height: 100px;
+  width: 50%;
+  margin: 20px;
+}
+
+.section{
+   background:#FFFFFF;
+   margin:20rpx;
+   padding:20rpx
+
+}
+
+.header {
+  text-align: center;
+}

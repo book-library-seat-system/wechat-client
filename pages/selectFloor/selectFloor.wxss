@@ -1,0 +1,43 @@
+/* pages/selectFloor/selectFloor.wxss */
+.header {
+  width: 100%;
+  text-align: center;
+  align-content: center;
+  align-self: center;
+}
+
+.section {
+  margin: 20px;
+}
+
+
+.seatSum {
+
+  font-size: 10px;
+}
+
+.remainSum {
+
+  font-size:10px;
+}
+
+.partA {
+  width: 40px;
+  display: inline-block;
+}
+
+.leftPart{
+  width:40px;
+}
+
+.partB {
+  width: 40px;
+  display: inline-block;
+}
+
+.rightPart {
+  display: flex;
+  justify-content: flex-end;
+  width: 250px;
+  margin-right: 0px;
+}

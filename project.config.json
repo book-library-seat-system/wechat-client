@@ -20,9 +20,42 @@
 			"current": -1,
 			"list": []
 		},
-		"miniprogram": {
+		"plugin": {
 			"current": -1,
 			"list": []
+		},
+		"game": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 2,
+			"list": [
+				{
+					"id": -1,
+					"name": "mainPage",
+					"pathName": "pages/mainPage/mainPage",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "index",
+					"pathName": "pages/index/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "selectFloor",
+					"pathName": "pages/selectFloor/selectFloor",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "selectArea",
+					"pathName": "pages/selectArea/selectArea",
+					"query": ""
+				}
+			]
 		}
 	}
 }

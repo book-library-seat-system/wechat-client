@@ -1,2 +1,33 @@
 <!--pages/mainPage/mainPage.wxml-->
-<text>pages/mainPage/mainPage.wxml</text>
+<view class="header">
+  <text>开始预约</text>
+</view>
+
+<view>
+  <text>选择时间段</text>
+
+<view class="section">  
+  <picker mode="time" value="{{time}}" start="00:00" end="23:59" bindchange="bindStartTimeChange">  
+    <view class="picker">  
+     开始时间 : {{startTimes}}
+    </view>  
+  </picker>  
+</view>  
+<view class="section">  
+  <picker mode="time" value="{{time}}" start="00:00" end="23:59" bindchange="bindEndTimeChange">  
+    <view class="picker">  
+     结束时间 : {{endTimes}}
+    </view>  
+  </picker>  
+</view> 
+<view class="section">  
+  <picker mode="date" value="{{date}}" start="1978-01-01" end="2017-1-23" bindchange="bindDateChange">  
+    <view class="picker">  
+      日期: {{dates}}  
+    </view>  
+  </picker>  
+</view>
+  <button bindtap='startReserve'>开始预约</button>
+  <button bindtap='checkIn'>扫码签到</button>
+  <button bindtap='checkOut'>签退</button>
+</view>

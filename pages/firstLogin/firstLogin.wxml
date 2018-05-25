@@ -9,7 +9,7 @@
     </block>
     <block class="line">
       <text class="password">密码</text> <input class="inputPW" password="true" placeholder="请输入密码"></input>
-      <button class="bindBtn" >绑定</button>
+      <button class="bindBtn" bindtap="login">绑定</button>
     </block>
   </form>
 </view>

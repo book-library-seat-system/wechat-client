@@ -1,0 +1,69 @@
+<view class="header">
+    <text>选择区域</text>
+</view>
+
+<view>
+  <block>
+  <view bindtap='selectSeat' class="section">
+      <view class="overAll">
+        <view class="partA">
+          <view class="leftPart">
+            <text>A</text>
+          </view>
+        </view>
+        <view class="partB">
+        <view class="rightPart">
+          <text class="seatSum">共有座位：100个</text>
+          <text class="remainSum">剩余座位：80个</text>
+        </view>
+        </view>
+      </view>
+      <progress class = "pg" percent='20' active='true' show-info='true'></progress>
+  </view>
+  </block>
+
+  <block>
+  <view bindtap='selectSeat' class="section">
+<view class="overAll">
+        <view class="partA">
+          <view class="leftPart">
+            <text>B</text>
+          </view>
+        </view>
+        <view class="partB">
+        <view class="rightPart">
+          <text class="seatSum">共有座位：100个</text>
+          <text class="remainSum">剩余座位：60个</text>
+        </view>
+        </view>
+      </view>
+    <progress class = "pg" percent='40' active='true' show-info='true'></progress>
+  </view>
+  </block>
+  
+  <block>
+  <view bindtap="selectSeat" class="section">
+<view class="overAll">
+        <view class="partA">
+          <view class="leftPart">
+            <text>C</text>
+          </view>
+        </view>
+        <view class="partB">
+        <view class="rightPart">
+          <text class="seatSum">共有座位：100个</text>
+          <text class="remainSum">剩余座位：40个</text>
+        </view>
+        </view>
+      </view>
+    <progress class = "pg" percent='60' active='true' show-info='true'></progress>
+  </view>
+  </block>
+  
+</view>
+<view class="txt">
+  <text>地图</text>
+</view>
+<view class="map">
+    <block><image src='../../images/reserve.png'></image> </block>
+</view>

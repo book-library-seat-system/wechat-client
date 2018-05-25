@@ -1,0 +1,55 @@
+/* pages/selectArea/selectArea.wxss */
+.header {
+  text-align: center;
+}
+
+.section {
+  margin: 20px;
+}
+
+.seatSum {
+  margin-left: 10px;
+  font-size: 10px;
+}
+
+.remainSum {
+  margin-left: 5px;
+  font-size:10px;
+}
+
+.map {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.txt {
+  width: 100%;
+  text-align: center;
+}
+
+.overAll {
+  display: inline-block;
+}
+
+.partA {
+  width: 40px;
+  display: inline-block;
+}
+
+.leftPart{
+  width:40px;
+}
+
+.partB {
+  width: 40px;
+  display: inline-block;
+}
+
+.rightPart {
+  display: flex;
+  justify-content: flex-end;
+  width: 250px;
+  margin-right: 0px;
+}

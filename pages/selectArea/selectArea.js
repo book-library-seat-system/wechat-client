@@ -1,14 +1,11 @@
-// pages/mainPage/mainPage.js
+// pages/selectArea/selectArea.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    dates: '2017-05-08',
-    startTimes: '12:00',
-    endTimes: '12:01',
-    index: 4,
+  
   },
 
   /**
@@ -65,46 +62,5 @@ Page({
    */
   onShareAppMessage: function () {
   
-  },
-
-  bindStartTimeChange: function (e) {
-    console.log("aaa")
-    this.setData({
-      startTimes: e.detail.value
-    })
-  },
-
-  bindEndTimeChange: function (e) {
-    console.log("aaa")
-    this.setData({
-      endTimes: e.detail.value
-    })
-  },
-
-  bindDateChange: function (e) {
-    console.log(e.detail.value)
-    this.setData({
-      dates: e.detail.value
-    })
-  },
-  bindPickerChange: function (e) {
-    console.log(e.detail.value)
-    this.setData({
-      index: e.detail.value
-    })
-  },
-  startReserve: function () {
-    wx.navigateTo({
-      url: '../selectFloor/selectFloor',
-    })
-  },
-
-  checkIn: function() {
-
-  },
-
-  checkOut: function() {
-
-  },
-
+  }
 })
