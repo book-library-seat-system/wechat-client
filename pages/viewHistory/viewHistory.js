@@ -1,11 +1,19 @@
-// pages/selectSeat/selectSeat.js
+// pages/viewHistory/viewHistory.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    listData: [
+      { "code": "01", "text": "2017-05-05 1F 2A 3D", "type": "预约成功" },
+      { "code": "02", "text": "2017-05-05 1F 2A 3D", "type": "已履约" },
+      { "code": "03", "text": "2017-05-05 1F 2A 3D", "type": "已履约" },
+      { "code": "04", "text": "2017-05-05 1F 2A 3D", "type": "已履约" },
+      { "code": "05", "text": "2017-05-05 1F 2A 3D", "type": "已履约" },
+      { "code": "06", "text": "2017-05-05 1F 2A 3D", "type": "已履约" },
+      { "code": "07", "text": "2017-05-05 1F 2A 3D", "type": "违约" }
+    ]
   },
 
   /**
@@ -62,13 +70,5 @@ Page({
    */
   onShareAppMessage: function () {
   
-  },
-  confirmSeat: function() {
-    wx.redirectTo({
-      url: '../reserveConfirm/reserveConfirm',
-      success: function(res) {},
-      fail: function(res) {},
-      complete: function(res) {},
-    })
   }
 })

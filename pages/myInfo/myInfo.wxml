@@ -6,16 +6,16 @@
 
 
 <view class="mainArea">
-  <view>
+  <view bindtap='viewHistory'>
     <text>我的预约记录</text>
   </view>
-  <view>
+  <view bindtap='viewHistory'>
     <text>履约次数</text>
   </view>
-  <view>
+  <view bindtap='viewHistory'>
     <text>违约次数</text>
   </view>
-  <view>
+  <view bindtap='viewHistory'>
     <text>待履约次数</text>
   </view>
 </view>

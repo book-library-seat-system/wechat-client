@@ -62,5 +62,10 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+  selectSeat: function() {
+    wx.redirectTo({
+      url: '../selectSeat/selectSeat',
+    })
   }
 })

@@ -196,6 +196,6 @@
 <view class="baseBar">
   <text class="confirmText">您选择的座位是：3D</text>
   <button class="randomChoose" hover-class='buttonHover'>随机选取</button>
- <button class="checkButton" id="check" disabled='true' hover-class='buttonHover'>请先选座</button>
+ <button class="checkButton" id="check" hover-class='buttonHover' bindtap='confirmSeat'>确定选座</button>
  </view>
 </block>

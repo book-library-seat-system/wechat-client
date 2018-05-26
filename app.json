@@ -8,7 +8,9 @@
     "pages/selectSeat/selectSeat",
     "pages/selectArea/selectArea",
     "pages/reserveConfirm/reserveConfirm",
-    "pages/myInfo/myInfo"
+    "pages/myInfo/myInfo",
+    "pages/reserveSuccess/reserveSuccess",
+    "pages/viewHistory/viewHistory"
   ],
   "window": {
     "backgroundTextStyle": "light",

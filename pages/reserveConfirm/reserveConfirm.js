@@ -62,5 +62,11 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+
+  reserveSuccess: function() {
+    wx.redirectTo({
+      url: '../reserveSuccess/reserveSuccess',
+    })
   }
 })

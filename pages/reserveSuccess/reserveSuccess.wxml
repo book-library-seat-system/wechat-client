@@ -1,5 +1,5 @@
 <view class="header">
-  <text>确认预约</text>
+  <text>预约成功</text>
 </view>
 
 <view class="row">
@@ -17,6 +17,6 @@
 
 <view class="baseBar">
   <view>
-    <button bindtap='reserveSuccess'>确认预约</button>
+    <button bindtap='aaa'>返回</button>
   </view>
 </view>

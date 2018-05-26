@@ -1,4 +1,4 @@
-// pages/selectSeat/selectSeat.js
+// pages/reserveSuccess/reserveSuccess.js
 Page({
 
   /**
@@ -63,12 +63,9 @@ Page({
   onShareAppMessage: function () {
   
   },
-  confirmSeat: function() {
-    wx.redirectTo({
-      url: '../reserveConfirm/reserveConfirm',
-      success: function(res) {},
-      fail: function(res) {},
-      complete: function(res) {},
+  aaa: function() {
+    wx.reLaunch({
+      url: '../myInfo/myInfo',
     })
   }
 })

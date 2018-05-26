@@ -62,6 +62,14 @@ Page({
   onShareAppMessage: function () {
   
   },
+  viewHistory: function() {
+    wx.redirectTo({
+      url: '../viewHistory/viewHistory',
+      success: function(res) {},
+      fail: function(res) {},
+      complete: function(res) {},
+    })
+  },
   getUserInfo: function () {
     var that = this
     _getUserInfo();

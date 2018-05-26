@@ -65,7 +65,7 @@ Page({
   },
 
   selectFloor: function() {
-    wx.navigateTo({
+    wx.redirectTo({
       url: '../selectArea/selectArea',
     })
   }

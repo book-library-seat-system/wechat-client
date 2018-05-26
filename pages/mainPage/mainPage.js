@@ -94,7 +94,7 @@ Page({
     })
   },
   startReserve: function () {
-    wx.navigateTo({
+    wx.redirectTo({
       url: '../selectFloor/selectFloor',
     })
   },
