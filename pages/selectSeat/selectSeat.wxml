@@ -1,2 +1,201 @@
-<!--pages/selectSeat/selectSeat.wxml-->
-<text>pages/selectSeat/selectSeat.wxml</text>
+<view class="header">
+  <text>选择座位</text>
+</view>
+
+<block class="overAll">
+<view class="row">
+
+  <view class="seatView">
+    <text class="seatTable"> A </text>
+  </view>
+
+  <view class="seatView">
+    <text class="seatTable"> B </text>
+  </view>
+
+  <view class="seatView">
+    <text class="seatTable"> C </text>
+  </view>
+
+  <view class="seatView">
+    <text class="seatTable"> D </text>
+  </view>
+
+  <view class="seatView">
+    <text class="seatTable"> E </text>
+  </view>
+
+  <view class="seatView">
+    <text class="seatTable"> F </text>
+  </view>
+
+  <view class="seatView">
+    <text class="seatTable"> G </text>
+  </view>
+
+  <view class="seatView">
+   <text class="seatTable"> H </text>
+  </view>
+  
+</view>
+</block>
+
+<block class="overAll">
+<view class="row">
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat" id="1A"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat" id="1B"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat" id="1C"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+  
+</view>
+</block>
+
+<block class="overAll">
+<view class="row">
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+  
+</view>
+</block>
+
+<block class="overAll">
+<view class="row">
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+  
+</view>
+</block>
+
+<block class="overAll">
+<view class="row">
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+  
+</view>
+</block>
+
+<block class="baseBar">
+<view class="baseBar">
+  <text class="confirmText">您选择的座位是：3D</text>
+  <button class="randomChoose" hover-class='buttonHover'>随机选取</button>
+ <button class="checkButton" id="check" disabled='true' hover-class='buttonHover'>请先选座</button>
+ </view>
+</block>
