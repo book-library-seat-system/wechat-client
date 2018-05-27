@@ -5,7 +5,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    dates: '2017-05-08',
+    startTimes: '9:00',
+    endTimes: '10:00',
+    index: 1
   },
 
   /**
@@ -64,11 +67,44 @@ Page({
   
   },
   confirmSeat: function() {
-    wx.redirectTo({
+    wx.navigateTo({
       url: '../reserveConfirm/reserveConfirm',
       success: function(res) {},
       fail: function(res) {},
       complete: function(res) {},
     })
+  },
+  bindStartTimeChange: function (e) {
+    // console.log("aaa")
+    // console.log("startTime")
+    var temp = e.detail.value[0] + e.detail.value[1] + ":00"
+    console.log(temp)
+    if(temp > this.data.endTimes) {
+      this.setData({
+        startTimes: this.data.endTimes,
+        endTimes: temp
+      })
+    } else {
+      this.setData({
+        startTimes: temp
+      })
+    }
+
+  },
+
+  bindEndTimeChange: function (e) {
+    console.log("aaa")
+    var temp = e.detail.value[0] + e.detail.value[1] + ":00"
+    if (temp < this.data.startTimes) {
+      this.setData({
+        startTimes: temp,
+        endTimes: this.data.endTimes
+      })
+    } else {
+      this.setData({
+        endTimes: temp
+      })
+    }
   }
+
 })

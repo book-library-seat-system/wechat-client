@@ -27,16 +27,37 @@
 
 .inputID {
   margin-top: 5px;
+  margin-left: 0px;
   margin-bottom: 5px;
-  border:  1px solid black;
+  border: 1px solid black;
+  width: 80%;
 }
 
 .inputPW {
   margin-top: 5px;
+  margin-left: 10px;
   margin-bottom: 5px;
-  border:  1px solid black;
+  border: 1px solid black;
+  width: 80%;
+}
+
+.inputSchool {
+  margin-top: 5px;
+  margin-left: 10px;
+  margin-bottom: 5px;
+  border: 1px solid black;
+  width: 80%;
 }
 
 .main {
   margin-top: 10px;
+}
+
+picker {
+  border: 1px solid #000000;
+}
+
+.line {
+  display: flex;
+  flex-direction: row;
 }

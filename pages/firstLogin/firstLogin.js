@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    schoolArray: ['请选择学校','中山大学', '华南理工大学', '广东外语外贸大学'],
+    index: 0,
   },
 
   /**
@@ -65,11 +66,14 @@ Page({
   },
 
   login: function() {
-    wx.navigateTo({
+    wx.switchTab({
       url: '../mainPage/mainPage',
-      success: function(res) {},
-      fail: function(res) {},
-      complete: function(res) {},
+    })
+  },
+  bindPickerChange: function (e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      index: e.detail.value
     })
   }
 })

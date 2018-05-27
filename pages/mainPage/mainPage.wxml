@@ -7,21 +7,21 @@
   <text>选择时间段</text>
 
 <view class="section">  
-  <picker mode="time" value="{{time}}" start="00:00" end="23:59" bindchange="bindStartTimeChange">  
+  <picker mode="time" value="{{time}}" start="8:00" end="21:00" bindchange="bindStartTimeChange">  
     <view class="picker">  
      开始时间 : {{startTimes}}
     </view>  
   </picker>  
 </view>  
 <view class="section">  
-  <picker mode="time" value="{{time}}" start="00:00" end="23:59" bindchange="bindEndTimeChange">  
+  <picker mode="time" value="{{time}}" start="9:00" end="22:00" bindchange="bindEndTimeChange">  
     <view class="picker">  
      结束时间 : {{endTimes}}
     </view>  
   </picker>  
 </view> 
 <view class="section">  
-  <picker mode="date" value="{{date}}" start="1978-01-01" end="2017-1-23" bindchange="bindDateChange">  
+  <picker mode="date" value="{{date}}" start="1978-01-01" end="2050-12-31" bindchange="bindDateChange">  
     <view class="picker">  
       日期: {{dates}}  
     </view>  

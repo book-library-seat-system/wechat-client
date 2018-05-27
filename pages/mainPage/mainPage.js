@@ -6,9 +6,9 @@ Page({
    */
   data: {
     dates: '2017-05-08',
-    startTimes: '12:00',
-    endTimes: '12:01',
-    index: 4,
+    startTimes: '9:00',
+    endTimes: '10:00',
+    index: 1,
   },
 
   /**
@@ -68,16 +68,20 @@ Page({
   },
 
   bindStartTimeChange: function (e) {
-    console.log("aaa")
+    // console.log("aaa")
+    // console.log("startTime")
+    var temp = e.detail.value[0] + e.detail.value[1] + ":00"
+    console.log(temp)
     this.setData({
-      startTimes: e.detail.value
+      startTimes: temp
     })
   },
 
   bindEndTimeChange: function (e) {
     console.log("aaa")
+    var temp = e.detail.value[0] + e.detail.value[1] + ":00"
     this.setData({
-      endTimes: e.detail.value
+      endTimes: temp
     })
   },
 
@@ -94,7 +98,7 @@ Page({
     })
   },
   startReserve: function () {
-    wx.redirectTo({
+    wx.navigateTo({
       url: '../selectFloor/selectFloor',
     })
   },

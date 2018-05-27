@@ -1,9 +1,40 @@
-<view class="header">
+<view class = "header">
+<view >
   <text>选择座位</text>
 </view>
 
+<view class="selectTime">
+  <view class="selectStartTime">  
+  <picker mode="time" value="{{time}}" start="9:00" end="21:00" bindchange="bindStartTimeChange">  
+    <view class="picker">  
+     {{startTimes}}
+    </view>  
+  </picker>  
+</view>  
+<text class="textInter">-</text>
+<view class="selectEndTime">  
+  <picker mode="time" value="{{time}}" start="9:00" end="22:00" bindchange="bindEndTimeChange">  
+    <view class="picker">  
+     {{endTimes}}
+    </view>  
+  </picker>  
+</view> 
+</view>
+
+<view class="seatStatus">
+  <image src='../../images/N.png' class="status"></image>
+  <image src='../../images/Y.png' class="status"></image>
+  <image src='../../images/S.png' class="status"></image>
+  <view>
+    <text class="textStatus">不可选</text>
+    <text class="textStatus">空闲</text>
+    <text class="textStatus">不可用</text>
+  </view>
+</view>
+
+
 <block class="overAll">
-<view class="row">
+<view class="row" id="seatIndicator">
 
   <view class="seatView">
     <text class="seatTable"> A </text>
@@ -39,10 +70,12 @@
   
 </view>
 </block>
+</view>
 
+<scroll-view class="seatArea" scroll-y = "true">
 <block class="overAll">
 <view class="row">
-
+<view class="rowIndicator"> <text>1</text> </view>
   <view class="seatView">
     <image src='../../images/N.png' class="seat" id="1A"></image>
   </view>
@@ -80,7 +113,7 @@
 
 <block class="overAll">
 <view class="row">
-
+<view class="rowIndicator"> <text>2</text> </view>
   <view class="seatView">
     <image src='../../images/N.png' class="seat"></image>
   </view>
@@ -118,7 +151,7 @@
 
 <block class="overAll">
 <view class="row">
-
+<view class="rowIndicator"> <text>3</text> </view>
   <view class="seatView">
     <image src='../../images/N.png' class="seat"></image>
   </view>
@@ -156,7 +189,7 @@
 
 <block class="overAll">
 <view class="row">
-
+<view class="rowIndicator"> <text>4</text> </view>
   <view class="seatView">
     <image src='../../images/N.png' class="seat"></image>
   </view>
@@ -191,6 +224,922 @@
   
 </view>
 </block>
+
+<block class="overAll">
+<view class="row">
+<view class="rowIndicator"> <text>5</text> </view>
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+  
+</view>
+</block>
+
+<block class="overAll">
+<view class="row">
+<view class="rowIndicator"> <text>6</text> </view>
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+  
+</view>
+</block>
+
+<block class="overAll">
+<view class="row">
+<view class="rowIndicator"> <text>7</text> </view>
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+  
+</view>
+</block>
+
+<block class="overAll">
+<view class="row">
+<view class="rowIndicator"> <text>8</text> </view>
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+  
+</view>
+</block>
+
+<block class="overAll">
+<view class="row">
+<view class="rowIndicator"> <text>9</text> </view>
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+  
+</view>
+</block>
+
+<block class="overAll">
+<view class="row">
+<view class="rowIndicator"> <text>10</text> </view>
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+  
+</view>
+</block>
+
+<block class="overAll">
+<view class="row">
+<view class="rowIndicator"> <text>11</text> </view>
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+  
+</view>
+</block>
+
+<block class="overAll">
+<view class="row">
+<view class="rowIndicator"> <text>12</text> </view>
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+  
+</view>
+</block>
+
+<block class="overAll">
+<view class="row">
+<view class="rowIndicator"> <text>13</text> </view>
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+  
+</view>
+</block>
+
+<block class="overAll">
+<view class="row">
+<view class="rowIndicator"> <text>14</text> </view>
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+  
+</view>
+</block>
+
+<block class="overAll">
+<view class="row">
+<view class="rowIndicator"> <text>15</text> </view>
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+  
+</view>
+</block>
+
+<block class="overAll">
+<view class="row">
+<view class="rowIndicator"> <text>16</text> </view>
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+  
+</view>
+</block>
+
+<block class="overAll">
+<view class="row">
+<view class="rowIndicator"> <text>17</text> </view>
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+  
+</view>
+</block>
+
+<block class="overAll">
+<view class="row">
+<view class="rowIndicator"> <text>18</text> </view>
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+  
+</view>
+</block>
+
+<block class="overAll">
+<view class="row">
+<view class="rowIndicator"> <text>19</text> </view>
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+  
+</view>
+</block>
+
+<block class="overAll">
+<view class="row">
+<view class="rowIndicator"> <text>20</text> </view>
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+  
+</view>
+</block>
+
+<block class="overAll">
+<view class="row">
+<view class="rowIndicator"> <text>21</text> </view>
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+  
+</view>
+</block>
+
+<block class="overAll">
+<view class="row">
+<view class="rowIndicator"> <text>22</text> </view>
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+  
+</view>
+</block>
+
+<block class="overAll">
+<view class="row">
+<view class="rowIndicator"> <text>23</text> </view>
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+  
+</view>
+</block>
+
+<block class="overAll">
+<view class="row">
+<view class="rowIndicator"> <text>24</text> </view>
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+  
+</view>
+</block>
+
+<block class="overAll">
+<view class="row">
+<view class="rowIndicator"> <text>25</text> </view>
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+  
+</view>
+</block>
+
+<block class="overAll">
+<view class="row">
+<view class="rowIndicator"> <text>26</text> </view>
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+  
+</view>
+</block>
+
+<block class="overAll">
+<view class="row">
+<view class="rowIndicator"> <text>27</text> </view>
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+  
+</view>
+</block>
+
+<block class="overAll">
+<view class="row">
+<view class="rowIndicator"> <text>28</text> </view>
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+
+  <view class="seatView">
+    <image src='../../images/N.png' class="seat"></image>
+  </view>
+  
+</view>
+</block>
+
+</scroll-view>
+<view class="blankSpace">
+</view>
 
 <block class="baseBar">
 <view class="baseBar">
