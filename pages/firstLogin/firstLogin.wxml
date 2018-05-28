@@ -3,12 +3,14 @@
 </view>
 <view class = "main">
   <text >首次使用请绑定NetID\n</text>
-  <form>
+  <form bindsubmit="formSubmit">
     <view class="line" >
-      <text display="id">NetID: </text> <input class="inputID" placeholder="请输入NetID"></input>
+      <text display="id">NetID: </text> 
+      <input class="inputID" name="netid" placeholder="请输入NetID"></input>
     </view>
     <view class="line">
-      <text class="password">密码:</text> <input class="inputPW" password="true" placeholder="请输入密码"></input>
+      <text class="password">密码:</text> 
+      <input class="inputPW" name="pw" password="true" placeholder="请输入密码"></input>
     </view>
     <view class="line">
       <text>学校:</text>  
@@ -18,6 +20,6 @@
         </view>
       </picker> 
     </view>
-      <button class="bindBtn" bindtap="login">绑定</button>
+      <button formType="submit">绑定</button>
   </form>
 </view>

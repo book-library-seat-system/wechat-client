@@ -29,5 +29,4 @@
 </view>
   <button bindtap='startReserve'>开始预约</button>
   <button bindtap='checkIn'>扫码签到</button>
-  <button bindtap='checkOut'>签退</button>
 </view>

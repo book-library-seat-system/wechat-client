@@ -1,4 +1,5 @@
 // pages/myInfo/myInfo.js
+var app = getApp()
 Page({
 
   /**
@@ -12,6 +13,20 @@ Page({
    */
   onLoad: function (options) {
     this.getUserInfo();
+    wx.request({
+      url: app.getURL() + "/v1/users?openID=" + app.getOpenid(),
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      method: "GET",
+      complete: function (res) {
+        if (res == null || res.data == null) {
+          console.error('网络请求失败');
+          return;
+        }
+        console.log(res)
+      }
+    })
   },
 
   /**
