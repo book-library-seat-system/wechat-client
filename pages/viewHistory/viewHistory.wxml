@@ -2,7 +2,7 @@
   <text>历史记录</text>
 </view>
 
-<view class="table">
+<scroll-view class="table">
   <view class="tr bg-w">
     <view class="th">编号</view>
     <view class="th">相关信息</view>
@@ -11,13 +11,19 @@
   <block wx:for="{{listData}}" wx:key="{{code}}">
     <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
       <view class="td1">{{item.code}}</view>
-      <view class="td2">{{item.text}}</view>
+      <view class="td2">
+        <view >{{item.date}}</view>
+        <view >{{item.location}}</view>
+      </view>
       <view class="td3">{{item.type}}</view>
     </view>
     <view class="tr" wx:else>
       <view class="td1">{{item.code}}</view>
-      <view class="td2">{{item.text}}</view>
+      <view class="td2">
+        <view >{{item.date}}</view>
+        <view >{{item.location}}</view>
+      </view>
       <view class="td3">{{item.type}}</view>
     </view>
   </block>
-</view>
+</scroll-view>

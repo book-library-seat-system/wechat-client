@@ -6,6 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    sum: 12,
     voil:1,
     reserved:0
   },
@@ -93,7 +94,7 @@ Page({
   
   },
   viewHistory: function() {
-    wx.redirectTo({
+    wx.navigateTo({
       url: '../viewHistory/viewHistory',
       success: function(res) {},
       fail: function(res) {},

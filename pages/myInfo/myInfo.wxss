@@ -14,3 +14,23 @@
 .mainArea {
   margin-left: 40px;
 }
+
+.line {
+  margin-top: 20px;
+   width: 100%; 
+   justify-content: center; 
+  display: flex;
+  /* border-bottom: 1px solid green; */
+}
+
+.firstCol {
+  /* margin-left: 20%; */
+  width: 40%;
+  border-bottom: 1px solid green;
+}
+
+.secondCol {
+  width: 20%;
+  border-bottom: 1px solid green;
+  /* margin-left: 10%; */
+}
