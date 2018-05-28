@@ -6,6 +6,8 @@ Page({
    * 页面的初始数据
    */
   data: {
+    voil:1,
+    reserved:0
   },
 
   /**
@@ -13,6 +15,7 @@ Page({
    */
   onLoad: function (options) {
     this.getUserInfo();
+    var that = this
     wx.request({
       url: app.getURL() + "/v1/users?openID=" + app.getOpenid(),
       header: {
@@ -25,7 +28,19 @@ Page({
           return;
         }
         console.log(res)
+        var count = 0
+        var len = res.data.bookseatinfos.length
+        for(var i = 0; i < len; i++) {
+          if (res.data.bookseatinfos[i].seatinfo == '1') count++
+        }
+        //that,setData异步执行，刷新界面
+        that.setData({
+          voil: res.data.voilation,
+          reserved:count
+        })
+        
       }
+      
     })
   },
 
