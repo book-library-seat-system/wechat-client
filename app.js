@@ -66,7 +66,7 @@ App({
   globalData: {
     userInfo: null,
     openID:null,
-        prefixUrl:"https://private-anon-a293b97daf-librarybookseatsystem.apiary-mock.com",
-        seatArray:null
+    prefixUrl:"https://private-anon-a293b97daf-librarybookseatsystem.apiary-mock.com",
+    seatArray:null
   }
 })

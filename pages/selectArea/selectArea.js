@@ -1,71 +1,45 @@
 // pages/selectArea/selectArea.js
+app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    valid_1:null,
+    valid_2:null,
+    valid_3:null
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    var that  = this
+    console.log(options)
+    var index = parseInt(options.floor)
+    a = app.getSeatArray()
+    var v1 = 0
+    var v2 = 0
+    var v3 = 0
+    for (var i = index * 360; i < index * 360+120; i++) {
+      if (a[i] == 0) v1++
+    }
+    for (var i = index * 360; i < index * 360+120; i++) {
+      if (a[i+120] == 0) v2++
+    }
+    for (var i = index * 360; i < index * 360 + 120; i++) {
+      if (a[i + 240] == 0) v3++
+    }
+    that.setData({
+      valid_1:v1,
+      valid_2:v2,
+      valid_3:v3
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
-  },
-  selectSeat: function() {
+  selectSeat: function(e) {
     wx.redirectTo({
-      url: '../selectSeat/selectSeat',
+      url: '../selectSeat/selectSeat?area='+e.currentTarget.id,
     })
   }
 })

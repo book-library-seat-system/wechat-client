@@ -1,16 +1,12 @@
 // pages/selectFloor/selectFloor.js
 var app = getApp()
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
+    valid_1f:null,
+    valid_2f:null,
+    valid_3f:null,
+    count:0
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function (options) {
     var start = options.s.substring(11,13)
     //截取
@@ -20,9 +16,8 @@ Page({
     var end = options.e.substring(11,13)
     var e = parseInt(end)
     var interval_count = e-s
-    console.log(interval_count)
+    var that = this
     for (var i = 0; i < interval_count; i++) {
-      console.log(i)
       var l = (s+i).toString()
       var r = (s+i+1).toString()
       if (l.length == 1) {
@@ -38,6 +33,7 @@ Page({
         },
         success: function (res) {
           //app.setSeatArray(res.data.seatinfos)
+          console.log(res.data.seatinfos)
           if (app.getSeatArray() == null) {
             app.setSeatArray(res.data.seatinfos)
           }
@@ -49,64 +45,34 @@ Page({
             }
             app.setSeatArray(arr)
           }
+          that.data.count++
+          if (that.data.count == interval_count) {
+            var f_1 = 0
+            var f_2 = 0
+            var f_3 = 0
+            var a = app.getSeatArray()
+            for (var j = 0; j < 360; j++) {
+              if (a[j] == 0) f_1++
+            }
+            for (var j = 0; j < 360; j++) {
+              if (a[j+360] == 0) f_2++
+            }
+            for (var j = 0; j < 360; j++) {
+              if (a[j+720] == 0) f_3++
+            }
+            that.setData({
+              valid_1f: f_1,
+              valid_2f: f_2,
+              valid_3f: f_3
+            })
+          }
         }
       })
     }
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
-  },
-
-  selectFloor: function() {
-    console.log(app.getSeatArray())
+  selectFloor: function(e) {
     wx.navigateTo({
-      url: '../selectArea/selectArea',
+      url: '../selectArea/selectArea?floor='+e.currentTarget.id,
     })
   }
 })

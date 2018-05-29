@@ -4,7 +4,7 @@
 
 <view>
   <block>
-  <view bindtap='selectSeat' class="section">
+  <view bindtap='selectSeat' class="section" id="1">
       <view class="overAll">
         <view class="partA">
           <view class="leftPart">
@@ -23,7 +23,7 @@
   </block>
 
   <block>
-  <view bindtap='selectSeat' class="section">
+  <view bindtap='selectSeat' class="section" id="2">
 <view class="overAll">
         <view class="partA">
           <view class="leftPart">
@@ -42,7 +42,7 @@
   </block>
   
   <block>
-  <view bindtap="selectSeat" class="section">
+  <view bindtap="selectSeat" class="section" id="3">
 <view class="overAll">
         <view class="partA">
           <view class="leftPart">
