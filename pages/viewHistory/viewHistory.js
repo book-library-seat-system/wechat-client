@@ -65,5 +65,19 @@ Page({
         }
       }
     })
+  },
+  showAlart: function() {
+    wx.showModal({
+      title: '取消预约',
+      content: '您确定要取消预约？',
+      success: function (res) {
+        if (res.confirm) {
+          console.log('用户点击确定')
+        } else {
+          console.log('用户点击取消')
+        }
+
+      }
+    })
   }
 })

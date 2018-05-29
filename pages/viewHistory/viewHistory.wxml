@@ -16,7 +16,10 @@
         <view >{{item.end_date}}</view>
         <view >{{item.location}}</view>
       </view>
-      <view class="td3">{{item.type}}</view>
+      <view class="td3">
+        <text class="status">{{item.type}}</text>
+        <button class="cancleReservation" bindtap='showAlart'>取消预约</button>
+      </view>
     </view>
     <view class="tr" wx:else>
       <view class="td1">{{item.code}}</view>
@@ -24,7 +27,10 @@
         <view >{{item.date}}</view>
         <view >{{item.location}}</view>
       </view>
-      <view class="td3">{{item.type}}</view>
+            <view class="td3">
+        <text class="status">{{item.type}}</text>
+        <button class="cancleReservation" bindtap='showAlart'>取消预约</button>
+      </view>
     </view>
   </block>
 </scroll-view>
