@@ -5,9 +5,17 @@ Page({
     valid_1f:null,
     valid_2f:null,
     valid_3f:null,
-    count:0
+    count:0,
+    date:null,
+    s:null,
+    e:null
   },
   onLoad: function (options) {
+    //传入下一个页面
+    console.log(options.s)
+    this.data.date = options.s.substring(0, 10)
+    this.data.s = options.s.substring(11, 16)
+    this.data.e = options.e.substring(11, 16)
     var start = options.s.substring(11,13)
     //截取
     var start_head = options.s.substring(0,11)
@@ -72,7 +80,7 @@ Page({
   },
   selectFloor: function(e) {
     wx.navigateTo({
-      url: '../selectArea/selectArea?floor='+e.currentTarget.id,
+      url: '../selectArea/selectArea?floor='+e.currentTarget.id+'&s='+this.data.s+'&e='+this.data.e+'&date='+this.data.date,
     })
   }
 })
