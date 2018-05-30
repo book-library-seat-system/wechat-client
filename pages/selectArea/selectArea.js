@@ -48,7 +48,7 @@ Page({
   selectArea: function(e) {
     console.log("dhdfdi")
     wx.navigateTo({
-      url: '../selectSeat/selectSeat?area=' + e.currentTarget.id +'&floor='+this.data.floor+ '&s=' + this.data.s + '&e=' + this.data.e + '&date=' + this.data.date,
+      url: '../selectSeat/selectSeat?area=' + e.currentTarget.id +'&floor='+that.data.floor+ '&s=' + that.data.s + '&e=' + that.data.e + '&date=' + that.data.date,
     })
   }
 })
