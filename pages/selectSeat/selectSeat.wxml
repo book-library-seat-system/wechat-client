@@ -77,35 +77,35 @@
 <view class="row">
 <view class="rowIndicator" > <text>{{item.row}}</text> </view>
   <view class="seatView">
-    <image src='../../images/N.png' class="seat" id="{{item.id1}}" bindtap='seatClick'></image>
+    <image src='{{imageset[item.id1]}}' class="seat" id="{{item.id1}}" bindtap='seatClick'></image>
   </view>
 
   <view class="seatView">
-    <image src='../../images/N.png' class="seat" id="{{item.id2}}" bindtap='seatClick'></image>
+    <image src='{{imageset[item.id2]}}' class="seat" id="{{item.id2}}" bindtap='seatClick'></image>
   </view>
 
   <view class="seatView">
-    <image src='../../images/N.png' class="seat" id="{{item.id3}}" bindtap='seatClick'></image>
+    <image src='{{imageset[item.id3]}}' class="seat" id="{{item.id3}}" bindtap='seatClick'></image>
   </view>
 
   <view class="seatView">
-    <image src='../../images/N.png' class="seat" id="{{item.id4}}" bindtap='seatClick'></image>
+    <image src='{{imageset[item.id4]}}' class="seat" id="{{item.id4}}" bindtap='seatClick'></image>
   </view>
 
   <view class="seatView">
-    <image src='../../images/N.png' class="seat" id="{{item.id5}}" bindtap='seatClick'></image>
+    <image src='{{imageset[item.id5]}}' class="seat" id="{{item.id5}}" bindtap='seatClick'></image>
   </view>
 
   <view class="seatView">
-    <image src='../../images/N.png' class="seat" id="{{item.id6}}" bindtap='seatClick'></image>
+    <image src='{{imageset[item.id6]}}' class="seat" id="{{item.id6}}" bindtap='seatClick'></image>
   </view>
 
   <view class="seatView">
-    <image src='../../images/N.png' class="seat" id="{{item.id7}}" bindtap='seatClick'></image>
+    <image src='{{imageset[item.id7]}}' class="seat" id="{{item.id7}}" bindtap='seatClick'></image>
   </view>
 
   <view class="seatView">
-    <image src='../../images/N.png' class="seat" id="{{item.id8}}" bindtap='seatClick'></image>
+    <image src='{{imageset[item.id8]}}' class="seat" id="{{item.id8}}" bindtap='seatClick'></image>
   </view>
   
 </view>

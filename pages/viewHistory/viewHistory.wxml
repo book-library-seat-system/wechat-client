@@ -18,7 +18,7 @@
       </view>
       <view class="td3">
         <text class="status">{{item.type}}</text>
-        <button class="cancleReservation" bindtap='showAlart'>{{item.button}}</button>
+        <button class="cancleReservation" bindtap='showAlart' id="{{item.code}}">{{item.button}}</button>
       </view>
     </view>
     <view class="tr" wx:else>
@@ -30,7 +30,7 @@
       </view>
             <view class="td3">
         <text class="status">{{item.type}}</text>
-        <button class="cancleReservation" bindtap='showAlart'>{{item.button}}</button>
+        <button class="cancleReservation" bindtap='showAlart' id="{{item.code}}">{{item.button}}</button>
       </view>
     </view>
   </block>
