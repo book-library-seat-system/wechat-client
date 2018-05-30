@@ -57,6 +57,7 @@ Page({
   },
   showAlart: function(e) {
     console.log(e)
+    console.log(e.target.id)
     wx.showModal({
       title: '取消预约',
       content: '您确定要取消预约？',
