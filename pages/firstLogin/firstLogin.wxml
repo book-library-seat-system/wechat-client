@@ -20,6 +20,6 @@
         </view>
       </picker> 
     </view>
-      <button formType="submit" class="subBtn" bindtap='nextPage'>绑定</button>
+      <button formType="submit" class="subBtn">绑定</button>
   </form>
 </view>
