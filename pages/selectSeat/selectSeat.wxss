@@ -45,9 +45,8 @@
   width: 250px;
   height: 50px;
   border-radius: 25px;
-  background-color: #FFC125;
+  background-color: #00BFFF;
   color: white;
-  border: 1px solid #FFC125;
 }
 
 .checkButton {
@@ -55,9 +54,8 @@
   width: 250px;
   height: 50px;
   border-radius: 25px;
-  background-color: #FFC125;
+  background-color: #00BFFF;
   color: white;
-  border: 1px solid #FFC125;
   disable: true;
 }
 
@@ -86,7 +84,7 @@
 .seatArea {
   display: flex;
   justify-content: center;
-  margin-top: 35%;
+  margin-top: 40%;
   width: 100%;
 }
 

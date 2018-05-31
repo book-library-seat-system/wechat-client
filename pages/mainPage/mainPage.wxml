@@ -1,11 +1,9 @@
 <!--pages/mainPage/mainPage.wxml-->
 <view class="header">
-  <text>开始预约</text>
+  <text>选择时间开始预约</text>
 </view>
 
-<view>
-  <text>选择时间段</text>
-
+<view class="mainArea">
 <view class="section">  
   <picker mode="time" value="{{time}}" start="8:00" end="21:00" bindchange="bindStartTimeChange">  
     <view class="picker">  
@@ -27,6 +25,6 @@
     </view>  
   </picker>  
 </view>
-  <button bindtap='startReserve'>开始预约</button>
-  <button bindtap='checkIn'>扫码签到</button>
+  <button bindtap='startReserve' class="btn">开始预约</button>
+  <button bindtap='checkIn' class="btn">扫码签到</button>
 </view>

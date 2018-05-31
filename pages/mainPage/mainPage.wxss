@@ -11,11 +11,26 @@ block {
 
 .section{
    background:#FFFFFF;
-   margin:20rpx;
-   padding:20rpx
+   margin:10rpx;
+   padding:10rpx;
 
 }
 
-.header {
+.header{
+  margin-top: 10px;
   text-align: center;
+  width:100%;
+  color: #00BFFF;
+}
+
+.btn {
+  width: 75%;
+  color: white;
+  background: #00BFFF;
+  margin-top: 10px;
+}
+
+.mainArea {
+  justify-content: center;
+  width: 100%;
 }

@@ -1,22 +1,28 @@
 <view class="header">
-  <text>确认预约</text>
+  <text>您选择的座位信息为</text>
 </view>
 
 <view class="row">
-  <text>座位号: </text>
-  <text>1F A区 3D</text>
+  <image class='logo' src='../../images/loc.png'></image>
+  <view class="textArea">
+    <text>1F A区 3D</text>
+  </view>
 </view>
 <view class="row">
-  <text>时间段: </text>
-  <text>2017-05-08 9:00-12:00</text>
+  <image class='logo' src='../../images/time.png'></image>
+  <view class='textArea'>
+   <text>2017-05-08 9:00-12:00</text>
+  </view>
 </view>
 <view class="row">
-  <text>学号:</text>
-  <text>123456</text>
+  <image class='logo' src='../../images/account.png'></image>
+  <view class='textArea'>
+    <text>123456</text>
+  </view>
 </view>
 
 <view class="baseBar">
   <view>
-    <button bindtap='reserveSuccess'>确认预约</button>
+    <button bindtap='reserveSuccess' class="btn">确认预约</button>
   </view>
 </view>

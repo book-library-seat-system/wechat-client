@@ -8,26 +8,38 @@
 <view class="mainArea">
   <view bindtap='viewHistory' class="line">
     <view class="firstCol">
-      <text>我的预约记录</text>
+      <view class="leftPart">
+        <text>我的预约记录</text>
+      </view>
     </view>
     <view class="secondCol">
-      <text>{{sum}}次</text>
+      <view class='rightPart'>
+        <text>{{sum}}次</text>
+      </view>
     </view>
   </view>
   <view bindtap='viewHistory' class="line">
-    <view class="firstCol">
-      <text>违约次数 </text>
+        <view class="firstCol">
+      <view class="leftPart">
+        <text>违约次数</text>
+      </view>
     </view>
-    <view class="secondCol">  
-      <text>{{voil}}次</text>
+    <view class="secondCol">
+      <view class='rightPart'>
+        <text>{{sum}}次</text>
+      </view>
     </view>
   </view>
   <view bindtap='viewHistory' class="line">
-    <view class="firstCol">
-     <text>待履约次数 </text>
+        <view class="firstCol">
+      <view class="leftPart">
+        <text>待履约次数</text>
+      </view>
     </view>
     <view class="secondCol">
-     <text>{{reserved}}次</text>
+      <view class='rightPart'>
+        <text>{{sum}}次</text>
+      </view>
     </view>
   </view>
 </view>

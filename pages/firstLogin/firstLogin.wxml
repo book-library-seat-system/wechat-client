@@ -1,25 +1,25 @@
 <view class = "header">
-  <text>欢迎使用图书馆座位预约系统</text>
+  <text>图书馆选座系统</text>
 </view>
 <view class = "main">
-  <text >首次使用请绑定NetID\n</text>
+  <view class='note'><text>使用我的学校对应的账号和密码进行绑定</text></view>
   <form bindsubmit="formSubmit">
     <view class="line" >
-      <text display="id">NetID: </text> 
+      <image src='../../images/account.png' class="logo"></image>
       <input class="inputID" name="netid" placeholder="请输入NetID"></input>
     </view>
     <view class="line">
-      <text class="password">密码:</text> 
-      <input class="inputPW" name="pw" password="true" placeholder="请输入密码"></input>
+      <image src='../../images/password.png' class="logo"></image>
+      <input class="inputID" name="pw" password="true" placeholder="请输入密码"></input>
     </view>
     <view class="line">
-      <text>学校:</text>  
+      <image src='../../images/lib.png' class="logo"></image>
       <picker bindchange="bindPickerChange" value="{{index}}" range="{{schoolArray}}" class="inputSchool">
         <view class="picker">
           {{schoolArray[index]}}
         </view>
       </picker> 
     </view>
-      <button formType="submit">绑定</button>
+      <button formType="submit" class="subBtn" bindtap='nextPage'>绑定</button>
   </form>
 </view>

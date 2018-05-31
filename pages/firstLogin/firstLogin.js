@@ -165,5 +165,13 @@ Page({
     this.setData({
       index: e.detail.value
     })
+  },
+  nextPage: function() {
+    wx.redirectTo({
+      url: '../mainPage/mainPage',
+      success: function(res) {},
+      fail: function(res) {},
+      complete: function(res) {},
+    })
   }
 })

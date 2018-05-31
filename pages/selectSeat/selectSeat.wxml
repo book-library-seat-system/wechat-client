@@ -25,17 +25,18 @@
   <image src='../../images/N.png' class="status"></image>
   <image src='../../images/Y.png' class="status"></image>
   <image src='../../images/S.png' class="status"></image>
+  <image src='../../images/location.png' class="status"></image>
   <view>
     <text class="textStatus">不可选</text>
     <text class="textStatus">空闲</text>
     <text class="textStatus">不可用</text>
+    <text class="textStatus">已选</text>
   </view>
 </view>
 
 
 <block class="overAll">
 <view class="row" id="seatIndicator">
-
   <view class="seatView">
     <text class="seatTable"> A </text>
   </view>

@@ -3,9 +3,14 @@
 .header {
   width: 100%;
   text-align: center;
+  color: #00BFFF;
 }
 .row {
-  margin: 20px;
+  margin: 5px;
+  margin-left: 40px;
+  width: 100%;
+  /* border: 1px solid black; */
+  display: flex;
 }
 
 .baseBar {
@@ -13,4 +18,23 @@
   position: absolute;
   top: 90%;
   left: 2%;
+}
+
+.btn {
+  color: white;
+  width: 75%;
+  background-color: #00BFFF;
+}
+
+.logo {
+  width: 30px;
+  height:30px;
+  margin: 5px;
+}
+
+.textArea {
+  display: inline;
+  font-size: 15px;
+  margin: 10px;
+  /* border: 1px solid black; */
 }
