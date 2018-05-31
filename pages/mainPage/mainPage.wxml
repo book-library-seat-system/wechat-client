@@ -1,5 +1,6 @@
 <!--pages/mainPage/mainPage.wxml-->
 <view class="header">
+<text>欢迎来到图书馆座位预约系统\n\n</text>
   <text>选择时间开始预约</text>
 </view>
 

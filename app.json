@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/firstLogin/firstLogin",
     "pages/mainPage/mainPage",
+    "pages/firstLogin/firstLogin",
     "pages/index/index",
     "pages/logs/logs",
     "pages/selectFloor/selectFloor",
@@ -26,7 +26,7 @@
       {
         "selectedIconPath": "images/reserve.png",
         "iconPath": "images/reserve.png",
-        "pagePath": "pages/firstLogin/firstLogin",
+        "pagePath": "pages/mainPage/mainPage",
         "text": "首页"
       },
       {
