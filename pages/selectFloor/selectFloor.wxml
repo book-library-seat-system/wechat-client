@@ -15,11 +15,11 @@
         <view class="partB">
         <view class="rightPart">
           <text class="seatSum">共有座位：360个</text>
-          <text class="remainSum">剩余座位：10个</text>
+          <text class="remainSum">{{valid_1f}}</text>
         </view>
         </view>
       </view>
-    <progress class = "pg" percent='20' active='true' show-info='true'></progress>
+    <progress class = "pg" percent='{{per_1}}' active='true' show-info='true'></progress>
   </view>
   </block>
 
@@ -34,11 +34,11 @@
         <view class="partB">
         <view class="rightPart">
           <text class="seatSum">共有座位：360个</text>
-          <text class="remainSum">剩余座位：20个</text>
+          <text class="remainSum">{{valid_2f}}</text>
         </view>
         </view>
       </view>
-    <progress class = "pg" percent='40' active='true' show-info='true'></progress>
+    <progress class = "pg" percent='{{per_2}}' active='true' show-info='true'></progress>
   </view>
   </block>
   
@@ -53,11 +53,11 @@
         <view class="partB">
         <view class="rightPart">
           <text class="seatSum">共有座位：360个</text>
-          <text class="remainSum">剩余座位：20个</text>
+          <text class="remainSum">{{valid_3f}}</text>
         </view>
         </view>
       </view>
-    <progress class = "pg" percent='60' active='true' show-info='true'></progress>
+    <progress class = "pg" percent='{{per_3}}' active='true' show-info='true'></progress>
   </view>
   </block>
   

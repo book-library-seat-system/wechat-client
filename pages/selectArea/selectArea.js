@@ -9,6 +9,9 @@ Page({
     valid_1:null,
     valid_2:null,
     valid_3:null,
+    per_1:null,
+    per_2:null,
+    per_3:null,
     floor:null,
     date:null,
     s:null,
@@ -40,9 +43,12 @@ Page({
       if (a[i + 240] == 0) v3++
     }
     that.setData({
-      valid_1:v1,
-      valid_2:v2,
-      valid_3:v3
+      valid_1: '剩余座位：'+v1.toString()+'个',
+      valid_2: '剩余座位：' + v2.toString() + '个',
+      valid_3: '剩余座位：' + v3.toString() + '个',
+      per_1: v1,
+      per_2: v2,
+      per_3: v3
     })
   },
   selectArea: function(e) {

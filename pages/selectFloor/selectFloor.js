@@ -5,6 +5,9 @@ Page({
     valid_1f:null,
     valid_2f:null,
     valid_3f:null,
+    per_1:null,
+    per_2:null,
+    per_3:null,
     count:0,
     date:null,
     s:null,
@@ -69,9 +72,12 @@ Page({
               if (a[j+720] == 0) f_3++
             }
             that.setData({
-              valid_1f: f_1,
-              valid_2f: f_2,
-              valid_3f: f_3
+              valid_1f: '剩余座位：'+f_1.toString()+'个',
+              valid_2f: '剩余座位：' + f_2.toString() +'个',
+              valid_3f: '剩余座位：' + f_3.toString() +'个',
+              per_1: parseInt(f_1/360*100),
+              per_2: parseInt(f_2/360*100),
+              per_3: parseInt(f_3/360*100)
             })
           }
         }
