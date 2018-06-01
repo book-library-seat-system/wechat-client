@@ -26,7 +26,7 @@
     </view>
     <view class="secondCol">
       <view class='rightPart'>
-        <text>{{sum}}次</text>
+        <text>{{voil}}次</text>
       </view>
     </view>
   </view>
@@ -38,7 +38,7 @@
     </view>
     <view class="secondCol">
       <view class='rightPart'>
-        <text>{{sum}}次</text>
+        <text>{{reserved}}次</text>
       </view>
     </view>
   </view>
