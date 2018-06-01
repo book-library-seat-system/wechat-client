@@ -18,7 +18,7 @@
         </view>
         </view>
       </view>
-      <progress class = "pg" percent='{{per_1}}' active='true' show-info='true'></progress>
+      <progress class = "pg" percent='{{per_1}}' active='true' show-info='true' activeColor='{{color_1}}'></progress>
   </view>
   </block>
 
@@ -37,7 +37,7 @@
         </view>
         </view>
       </view>
-    <progress class = "pg" percent='{{per_2}}' active='true' show-info='true'></progress>
+    <progress class = "pg" percent='{{per_2}}' active='true' show-info='true' activeColor='{{color_2}}'></progress>
   </view>
   </block>
   
@@ -56,7 +56,7 @@
         </view>
         </view>
       </view>
-    <progress class = "pg" percent='{{per_3}}' active='true' show-info='true'></progress>
+    <progress class = "pg" percent='{{per_3}}' active='true' show-info='true' activeColor='{{color_3}}'></progress>
   </view>
   </block>
   
