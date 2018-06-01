@@ -5,21 +5,16 @@
 <view class="row">
   <image class='logo' src='../../images/loc.png'></image>
   <view class="textArea">
-    <text>1F A区 3D</text>
+    <text>{{pos}}</text>
   </view>
 </view>
 <view class="row">
   <image class='logo' src='../../images/time.png'></image>
   <view class='textArea'>
-   <text>2017-05-08 9:00-12:00</text>
+   <text>{{time}}</text>
   </view>
 </view>
-<view class="row">
-  <image class='logo' src='../../images/account.png'></image>
-  <view class='textArea'>
-    <text>123456</text>
-  </view>
-</view>
+
 
 <view class="baseBar">
   <view>

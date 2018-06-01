@@ -30,7 +30,9 @@ Page({
       { "row": "15", "id1": 112, "id2": 113, "id3": 114, "id4": 115, "id5": 116, "id6": 117, "id7": 118, "id8": 119, }
     ],
     imageset:[],
-    imageArr: ['../../images/Y.png','../../images/N.png']
+    imageArr: ['../../images/Y.png', '../../images/N.png','../../images/location.png'],
+    selected_id:null,
+    isSelected:false
   },
 
   onLoad: function (options) {
@@ -49,19 +51,20 @@ Page({
       var ID = (i - first)
       tt[ID] = this.data.imageArr[a[i]]
     }
-    console.log("hah")
     this.setData({
       imageset:tt
     })
   },
 
   confirmSeat: function() {
+    var seatid = this.data.floor * 360 + this.data.area * 120 + this.data.selected_id
     wx.navigateTo({
-      url: '../reserveConfirm/reserveConfirm',
+      url: '../reserveConfirm/reserveConfirm?seatID=' + seatid.toString() + '&begintime=' + this.data.dates + ' ' + this.data.startTimes + ':00' + '&endtime=' + this.data.dates + ' ' + this.data.endTimes + ':00',
       success: function(res) {},
       fail: function(res) {},
       complete: function(res) {},
     })
+
   },
   bindStartTimeChange: function (e) {
     // console.log("aaa")
@@ -97,50 +100,36 @@ Page({
   },
 
   seatClick: function(e) {
-    console.log(e.target.id);
-    var that=this;
-    var seatid = this.data.floor*360+this.data.area*120+parseInt(e.target.id)
-    wx.request({
-      url: app.getURL() + "/v1/seat/book",
-      method: "POST",
-      data: {
-        openID: app.getOpenid(),
-        seatID: seatid,
-        begintime: that.data.date + ' ' + that.data.startTimes+':00',
-        endtime: that.data.date + ' ' + that.data.endTimes + ':00'
-      },
+    if (this.data.imageset[parseInt(e.target.id)] == this.data.imageArr[1]) return
+    if (this.data.isSelected == true) {
+      this.data.imageset[this.data.selected_id] = this.data.imageArr[0]
+      this.data.isSelected = false
+    }
+    
+    this.data.imageset[parseInt(e.target.id)] = this.data.imageArr[2]
+    this.setData({
+      imageset:this.data.imageset,
+      selected_id : parseInt(e.target.id),
+      isSelected:true
+    })
+    console.log(this.data.selected_id)
+  },
 
-      complete: function (res) {
-        if (res == null || res.data == null) {
-          console.error('网络请求失败');
-          return;
-        }
-        if (res.data.errorcode == 0) {
-          wx.showModal({
-            title: '',
-            content: '预约成功',
-            success: function (res) {
-              if (res.confirm) {
-                console.log('用户点击确定')
-                wx.redirectTo({
-                  url: '../viewHistory/viewHistory',
-                })
-              }
-            }
-          })
-        } else {
-          wx.showModal({
-            title: '预约失败',
-            content: res.data.errorinformation,
-            success: function (res) {
-              if (res.confirm) {
-                console.log('用户点击确定')
-              }
-            }
-          })
-        }
+  randomSelect:function() {
+    if (this.data.isSelected == true) {
+      this.data.imageset[this.data.selected_id] = this.data.imageArr[0]
+      this.data.isSelected = false
+    }
+    for (var i = 0; i < 120; i++) {
+      if (this.data.imageset[i] == this.data.imageArr[0]) {
+        this.data.imageset[i] = this.data.imageArr[2]
+        this.data.selected_id = i
+        break
       }
+    }
+    this.setData({
+      imageset: this.data.imageset,
+      isSelected: true
     })
   }
-
 })
