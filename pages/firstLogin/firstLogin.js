@@ -7,6 +7,7 @@ Page({
    */
   data: {
     schoolArray: ['请选择学校','中山大学', '华南理工大学', '广东外语外贸大学'],
+    schoolInDatabase: ['', 'testsunyetsenuniversity', 'testsunyetsenuniversity','testsunyetsenuniversity'],
     index: 0,
   },
 
@@ -20,6 +21,7 @@ Page({
       },
       method: "GET",
       complete: function (res) {
+        console.log(res)
         if (res == null || res.data == null) {
           console.error('网络请求失败');
           return;
@@ -31,55 +33,6 @@ Page({
         }
       }
     })
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
   },
 
   formSubmit: function (e) {
@@ -124,7 +77,8 @@ Page({
     }
     var utilMd5 = require('../../utils/md5.js');
     pw = utilMd5.hexMD5(pw)
-    var school = this.data.schoolArray[this.data.index]
+    var school = this.data.schoolInDatabase[this.data.index]
+    //var school = "testsunyetsenuniversity"
     wx.request({
       url: app.getURL() + "/v1/users",
       method:"POST",

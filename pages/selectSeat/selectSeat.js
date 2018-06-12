@@ -1,10 +1,6 @@
 // pages/selectSeat/selectSeat.js
 var app = getApp()
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
     dates: '2017-05-08',
     startTimes: '9:00',
@@ -81,7 +77,6 @@ Page({
         startTimes: temp
       })
     }
-
   },
 
   bindEndTimeChange: function (e) {

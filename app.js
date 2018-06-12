@@ -1,4 +1,3 @@
-//app.js
 App({
   onLaunch: function () {
     // 展示本地存储能力
@@ -50,8 +49,7 @@ App({
   },
 
   getOpenid: function () {
-    //return this.globalData.openID;
-    return "12345678"
+    return this.globalData.openID;
   },
   getURL: function() {
     return this.globalData.prefixUrl;
@@ -66,7 +64,8 @@ App({
   globalData: {
     userInfo: null,
     openID:null,
-    prefixUrl:"https://private-anon-a293b97daf-librarybookseatsystem.apiary-mock.com",
+      prefixUrl:"http://118.89.50.110:8899",
+    //"https://private-anon-a293b97daf-librarybookseatsystem.apiary-mock.com",
     seatArray:null
   }
 })

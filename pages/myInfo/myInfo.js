@@ -1,19 +1,12 @@
 // pages/myInfo/myInfo.js
 var app = getApp()
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
     sum: 0,
     voil:1,
     reserved:0
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function (options) {
     this.getUserInfo();
     var that = this
@@ -39,18 +32,11 @@ Page({
           voil: res.data.voilation,
           reserved:count,
           sum:len
-        })
-        
+        }) 
       }
-      
     })
   },
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
-  },
+
   viewHistory: function() {
     wx.navigateTo({
       url: '../viewHistory/viewHistory',

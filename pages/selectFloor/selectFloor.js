@@ -1,4 +1,3 @@
-// pages/selectFloor/selectFloor.js
 var app = getApp()
 Page({
   data: {
@@ -40,8 +39,11 @@ Page({
       if (r.length == 1) {
         r = '0'+r
       }
+      console.log(start_head + l + start_tail)
+      console.log(start_head + r + start_tail)
+      console.log(i)
       wx.request({
-        url: app.getURL() + '/v1/seats?openID=' + app.getOpenid()+'&begintime='+start_head+l+start_tail+'&endtime='+start_head+r+start_tail, //仅为示例，并非真实的接口地址
+        url: app.getURL() + '/v1/seats?openID=' + app.getOpenid()+'&begintime='+start_head+l+start_tail+'&endtime='+start_head+r+start_tail,
         header: {
           'content-type': 'application/json' // 默认值
         },

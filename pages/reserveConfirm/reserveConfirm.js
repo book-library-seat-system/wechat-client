@@ -28,12 +28,14 @@ Page({
   },
 
   reserveSuccess: function() {
+    console.log(this.data.seatid)
+    console.log(typeof(this.data.seatid))
     wx.request({
       url: app.getURL() + "/v1/seat/book",
       method: "POST",
       data: {
         openID: app.getOpenid(),
-        seatID: this.data.seatid,
+        seatID: parseInt(this.data.seatid),
         begintime: this.data.s,
         endtime: this.data.e
       },

@@ -1,32 +1,42 @@
-// pages/mainPage/mainPage.js
 Page({
-  /**
-   * 页面的初始数据
-   */
   data: {
-    dates: '2017-05-08',
+    dates: '',
     startTimes: '09:00',
     endTimes: '10:00',
     index: 1,
+    start_date:'',
+    end_date:"",
+    
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function (options) {
+    var t = require('../../utils/util.js');
+  
+    var timestamp = Date.parse(new Date());
+    timestamp = timestamp / 1000;  
+    var tomorrow_timetamp = timestamp + 24 * 60 * 60;
+    var tomorrow_date = new Date(tomorrow_timetamp * 1000);
+    
+    var d1 = t.formatTime(new Date())
+    var d2 = t.formatTime(tomorrow_date)
+    console.log(d1)
+
+    this.setData({
+      dates: d1.substring(0, 10),
+      start_date: d1.substring(0, 10),
+      end_date: d2.substring(0, 10),
+    })
+    
   },
   bindStartTimeChange: function (e) {
-    // console.log("aaa")
-    // console.log("startTime")
     var temp = e.detail.value[0] + e.detail.value[1] + ":00"
     console.log(temp)
     this.setData({
-      startTimes: temp
+      startTimes: temp,
     })
   },
 
   bindEndTimeChange: function (e) {
-    console.log("aaa")
     var temp = e.detail.value[0] + e.detail.value[1] + ":00"
     this.setData({
       endTimes: temp
@@ -48,6 +58,23 @@ Page({
   startReserve: function () {
     var s = this.data.dates + ' ' + this.data.startTimes+':00'
     var e = this.data.dates + ' ' + this.data.endTimes+':00'
+    if (s >= e) {
+      wx.showModal({
+        title: '',
+        content: '开始时间不得晚于结束时间',
+      })
+      return
+    }
+    var t = require('../../utils/util.js');
+    var d1 = t.formatTime(new Date())
+    
+    if (s < d1) {
+      wx.showModal({
+        title: '',
+        content: '开始时间不合法',
+      })
+      return
+    }
     wx.navigateTo({
       url: '../selectFloor/selectFloor?' + 's='+s+'&e='+e,
     })
@@ -74,21 +101,11 @@ Page({
               wx.showModal({
                 title: '',
                 content: '签到成功',
-                success: function (res) {
-                  if (res.confirm) {
-                    console.log('用户点击确定')
-                  }
-                }
               })
             } else {
               wx.showModal({
                 title: '签到错误',
                 content: res.data.errorinformation,
-                success: function (res) {
-                  if (res.confirm) {
-                    console.log('用户点击确定')
-                  }
-                }
               })
             }
           }
@@ -96,5 +113,4 @@ Page({
       }
     })
   }
-
 })

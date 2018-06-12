@@ -3,12 +3,12 @@ var app = getApp()
 Page({
   data: {
     listData: [
-      { "code": "01", "start_date": "","end_date":"", "location": "1楼3区5A座","type": "已预约" },
+      /*{ "code": "01", "start_date": "","end_date":"", "location": "1楼3区5A座","type": "已预约" },
       { "code": "02", "date": "2017-05-05 09:00-10:00", "location": "2楼2区6B座", "type": "已预约" },
       { "code": "03", "date": "2017-05-05 09:00-10:00", "location": "3楼1区7C座", "type": "已预约" },
       { "code": "04", "date": "2017-05-05 09:00-10:00", "location": "1楼3区5D座", "type": "已预约" },
       { "code": "05", "date": "2017-05-05 09:00-10:00", "location": "2楼2区6E座", "type": "已预约" },
-      { "code": "06", "date": "2017-05-05 09:00-10:00", "location": "3楼1区7F座", "type": "已预约" }
+      { "code": "06", "date": "2017-05-05 09:00-10:00", "location": "3楼1区7F座", "type": "已预约" }*/
     ]
     ,
     arr_show :[]
@@ -24,6 +24,7 @@ Page({
       },
       method: "GET",
       complete: function (res) {
+        console.log(res)
         if (res == null || res.data == null) {
           console.error('网络请求失败');
           return;
