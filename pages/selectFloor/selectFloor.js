@@ -28,9 +28,11 @@ Page({
     var s = parseInt(start)
     var end = options.e.substring(11,13)
     var e = parseInt(end)
+    var arr = null
     var interval_count = e-s
     var that = this
     for (var i = 0; i < interval_count; i++) {
+     
       var l = (s+i).toString()
       var r = (s+i+1).toString()
       if (l.length == 1) {
@@ -39,51 +41,50 @@ Page({
       if (r.length == 1) {
         r = '0'+r
       }
-      console.log(start_head + l + start_tail)
-      console.log(start_head + r + start_tail)
-      console.log(i)
+     
+    
       wx.request({
-        url: app.getURL() + '/v1/seats?openID=' + app.getOpenid()+'&begintime='+start_head+l+start_tail+'&endtime='+start_head+r+start_tail,
+        url: app.getURL() + '/v1/seats?openID=' + app.getOpenid() + '&begintime=' + start_head + l + start_tail + '&endtime=' + start_head + r + start_tail,
         header: {
           'content-type': 'application/json' // 默认值
         },
         success: function (res) {
           //app.setSeatArray(res.data.seatinfos)
           console.log(res.data.seatinfos)
-          if (app.getSeatArray() == null) {
-            app.setSeatArray(res.data.seatinfos)
+          if (arr == null) {
+            arr = res.data.seatinfos
           }
           else {
-            var arr = app.getSeatArray()
             var len = arr.length
             for (var j = 0; j < len; j++) {
               if (res.data.seatinfos[j] != 0) arr[j] = 1
             }
-            app.setSeatArray(arr)
+
           }
           that.data.count++
           if (that.data.count == interval_count) {
+            app.setSeatArray(arr)
             var f_1 = 0
             var f_2 = 0
             var f_3 = 0
-            var a = app.getSeatArray()
+            
             for (var j = 0; j < 360; j++) {
-              if (a[j] == 0) f_1++
+              if (arr[j] == 0) f_1++
             }
             for (var j = 0; j < 360; j++) {
-              if (a[j+360] == 0) f_2++
+              if (arr[j + 360] == 0) f_2++
             }
             for (var j = 0; j < 360; j++) {
-              if (a[j+720] == 0) f_3++
+              if (arr[j + 720] == 0) f_3++
             }
             var tempGreen1 = 0
-            var greenStr1=""
+            var greenStr1 = ""
             var temp1 = ""
-            tempGreen1= parseInt(255 * (1 - parseInt(f_1 / 360 * 100) * 0.01))
+            tempGreen1 = parseInt(255 * (1 - parseInt(f_1 / 360 * 100) * 0.01))
             console.log(tempGreen1)
             greenStr1 = tempGreen1.toString(16)
-            if(greenStr1.length == 1) greenStr1 = "0"+greenStr1;
-            temp1 = "#FF"  + greenStr1 + "00"
+            if (greenStr1.length == 1) greenStr1 = "0" + greenStr1;
+            temp1 = "#FF" + greenStr1 + "00"
             console.log(temp1)
 
             var tempGreen2 = 0
@@ -93,7 +94,7 @@ Page({
             console.log(tempGreen2)
             greenStr2 = tempGreen2.toString(16)
             if (greenStr2.length == 1) greenStr2 = "0" + greenStr2;
-            temp2 = "#FF"  + greenStr2 + "00"
+            temp2 = "#FF" + greenStr2 + "00"
             console.log(temp2)
 
             var tempGreen3 = 0
@@ -107,12 +108,12 @@ Page({
             console.log(temp3)
 
             that.setData({
-              valid_1f: '剩余座位：'+f_1.toString()+'个',
-              valid_2f: '剩余座位：' + f_2.toString() +'个',
-              valid_3f: '剩余座位：' + f_3.toString() +'个',
-              per_1: parseInt(f_1/360*100),
-              per_2: parseInt(f_2/360*100),
-              per_3: parseInt(f_3/360*100),
+              valid_1f: '剩余座位：' + f_1.toString() + '个',
+              valid_2f: '剩余座位：' + f_2.toString() + '个',
+              valid_3f: '剩余座位：' + f_3.toString() + '个',
+              per_1: parseInt(f_1 / 360 * 100),
+              per_2: parseInt(f_2 / 360 * 100),
+              per_3: parseInt(f_3 / 360 * 100),
               color_1: temp1,
               color_2: temp2,
               color_3: temp3

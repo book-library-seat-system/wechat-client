@@ -11,16 +11,20 @@ App({
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
         if (res.code) {
           //发起网络请求
-          wx.request({
-            url: 'https://api.weixin.qq.com/sns/jscode2session?appid=wxb0295a71214e7ca7&secret=cc174512a7e111ce41426d0df36a331a&grant_type=authorization_code&js_code=' + res.code,
-            header: {
-              'content-type': 'application/json' 
-            },
-            success: function (res) {
-              that.globalData.openID = res.data.openid
-              console.log(res.data.openid) //获取openid  
-            }
+          let promise = new Promise(function (resolve, reject) {
+            wx.request({
+              url: 'https://api.weixin.qq.com/sns/jscode2session?appid=wxb0295a71214e7ca7&secret=cc174512a7e111ce41426d0df36a331a&grant_type=authorization_code&js_code=' + res.code,
+              header: {
+                'content-type': 'application/json' 
+              },
+              success: function (res) {
+                that.globalData.openID = res.data.openid
+                console.log(res.data.openid) //获取openid  
+              }
+            })
+         
           })
+          
         } else {
           console.log('获取用户登录态失败！' + res.errMsg)
         }
@@ -59,8 +63,7 @@ App({
   },
   getSeatArray: function() {
     return this.globalData.seatArray
-  }
-  ,
+  },
   globalData: {
     userInfo: null,
     openID:null,

@@ -16,7 +16,7 @@ Page({
 
   onLoad: function (options) {
     var that = this
-    console.log(typeof (that.data.listData))
+   
     wx.request({
       url: app.getURL() + "/v1/users?openID=" + app.getOpenid(),
       header: {
@@ -32,12 +32,12 @@ Page({
         if (res.data.errorcode == 0) {
           var trans = require('../../utils/seatid_trans.js');
           var len = res.data.bookseatinfos.length
-          console.log(res.data.bookseatinfos[0])
+        
           if (len == 0) return
           var i = 0
           var typ = ['','已预约','正在使用']
           var bu = ['','取消预约','提前签退']
-          that.data.arr_show[0] = { "code": "1", "start_date": res.data.bookseatinfos[0].begintime, "end_date": res.data.bookseatinfos[0].endtime, "location": trans.seatid_to_seatPos(res.data.bookseatinfos[0].seatID), "type": typ[res.data.bookseatinfos[0].seatinfo], "button": bu[res.data.bookseatinfos[0].seatinfo], "seatid": res.data.bookseatinfos[0].seatID}
+          that.data.arr_show[0] = { "code": "1", "start_date": res.data.bookseatinfos[0].begintime.substring(0, 19).replace('T', ' '), "end_date": res.data.bookseatinfos[0].endtime.substring(0,19).replace('T',' '), "location": trans.seatid_to_seatPos(res.data.bookseatinfos[0].seatID), "type": typ[res.data.bookseatinfos[0].seatinfo], "button": bu[res.data.bookseatinfos[0].seatinfo], "seatid": res.data.bookseatinfos[0].seatID}
           while (i+1 < len) {
             i++
             if (res.data.bookseatinfos[i].begintime == res.data.bookseatinfos[i-1].endtime && 
@@ -46,7 +46,7 @@ Page({
               that.data.arr_show[that.data.arr_show.length - 1].end_date = res.data.bookseatinfos[i].endtime
               } else {
               console.log(res.data.bookseatinfos[i])
-              that.data.arr_show[that.data.arr_show.length] = { "code": (that.data.arr_show.length + 1).toString(), "start_date": res.data.bookseatinfos[i].begintime, "end_date": res.data.bookseatinfos[i].endtime, "location": trans.seatid_to_seatPos(res.data.bookseatinfos[i].seatID), "type": typ[res.data.bookseatinfos[i].seatinfo], "button": bu[res.data.bookseatinfos[i].seatinfo],"seatid": res.data.bookseatinfos[i].seatID }
+              that.data.arr_show[that.data.arr_show.length] = { "code": (that.data.arr_show.length + 1).toString(), "start_date": res.data.bookseatinfos[i].begintime.substring(0, 19).replace('T', ' '), "end_date": res.data.bookseatinfos[i].endtime.substring(0, 19).replace('T', ' '), "location": trans.seatid_to_seatPos(res.data.bookseatinfos[i].seatID), "type": typ[res.data.bookseatinfos[i].seatinfo], "button": bu[res.data.bookseatinfos[i].seatinfo],"seatid": res.data.bookseatinfos[i].seatID }
               }
           }
           that.setData({
@@ -58,25 +58,23 @@ Page({
   },
   showAlart: function(e) {
     var that = this
-    console.log(e)
+   
     var index = parseInt(e.target.id)-1
+    
     wx.showModal({
       title: '取消预约',
       content: '您确定要取消预约？',
       success: function (res) {
-        if (res.confirm) {
-          console.log('用户点击确定')
-          console.log(that.data.arr_show[index].seatid)
+        if (res.confirm) {  
           wx.request({
             url: app.getURL() +'/v1/seat/unbook',
             method:"POST",
             data: {
               openID: app.getOpenid(),
               seatID: that.data.arr_show[index].seatid,
-              begintime: that.data.arr_show[index].begintime,
-              endtime: that.data.arr_show[index].endtime
+              begintime: that.data.arr_show[index].start_date,
+              endtime: that.data.arr_show[index].end_date
             },
-
             complete: function (res) {
               if (res == null || res.data == null) {
                 console.error('网络请求失败');
