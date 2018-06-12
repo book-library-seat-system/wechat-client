@@ -15,21 +15,48 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    wx.request({  url:app.getURL()+"/v1/users?openID=" + app.getOpenid(),
-      header: {
-        'content-type': 'application/json' // 默认值
-      },
-      method: "GET",
-      complete: function (res) {
-        console.log(res)
-        if (res == null || res.data == null) {
-          console.error('网络请求失败');
-          return;
-        }
-        if (res.data.errorcode == 0) {
-          wx.switchTab({
-            url: '../mainPage/mainPage',
+    var that = this;
+    // 登录
+    wx.login({
+      success: res => {
+        // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        if (res.code) {
+          //发起网络请求
+          let promise = new Promise(function (resolve, reject) {
+            wx.request({
+              url: 'https://api.weixin.qq.com/sns/jscode2session?appid=wxb0295a71214e7ca7&secret=cc174512a7e111ce41426d0df36a331a&grant_type=authorization_code&js_code=' + res.code,
+              header: {
+                'content-type': 'application/json'
+              },
+              success: function (res) {
+                app.setOpenid(res.data.openid)
+                console.log(res.data.openid) //获取openid
+                wx.request({
+                  url: app.getURL() + "/v1/users?openID=" + app.getOpenid(),
+                  header: {
+                    'content-type': 'application/json' // 默认值
+                  },
+                  method: "GET",
+                  complete: function (res) {
+                    console.log(res)
+                    if (res == null || res.data == null) {
+                      console.error('网络请求失败');
+                      return;
+                    }
+                    if (res.data.errorcode == 0) {
+                      wx.switchTab({
+                        url: '../mainPage/mainPage',
+                      })
+                    }
+                  }
+                })
+              }
+            })
+
           })
+
+        } else {
+          console.log('获取用户登录态失败！' + res.errMsg)
         }
       }
     })
