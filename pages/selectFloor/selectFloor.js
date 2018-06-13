@@ -16,7 +16,6 @@ Page({
   },
   onLoad: function (options) {
     //传入下一个页面
-    console.log(options.s)
     this.data.date = options.s.substring(0, 10)
     this.data.s = options.s.substring(11, 16)
     this.data.e = options.e.substring(11, 16)
@@ -34,19 +33,18 @@ Page({
             var f_3 = 0
             
             for (var j = 0; j < 360; j++) {
-              if (arr[j] == 0) f_1++
+              if (res.data.seatinfos[j] == 0) f_1++
             }
             for (var j = 0; j < 360; j++) {
-              if (arr[j + 360] == 0) f_2++
+              if (res.data.seatinfos[j + 360] == 0) f_2++
             }
             for (var j = 0; j < 360; j++) {
-              if (arr[j + 720] == 0) f_3++
+              if (res.data.seatinfos[j + 720] == 0) f_3++
             }
             var tempGreen1 = 0
             var greenStr1 = ""
             var temp1 = ""
             tempGreen1 = parseInt(255 * (1 - parseInt(f_1 / 360 * 100) * 0.01))
-            console.log(tempGreen1)
             greenStr1 = tempGreen1.toString(16)
             if (greenStr1.length == 1) greenStr1 = "0" + greenStr1;
             temp1 = "#FF" + greenStr1 + "00"
@@ -56,7 +54,6 @@ Page({
             var greenStr2 = ""
             var temp2 = ""
             tempGreen2 = parseInt(255 * (1 - parseInt(f_2 / 360 * 100) * 0.01))
-            console.log(tempGreen2)
             greenStr2 = tempGreen2.toString(16)
             if (greenStr2.length == 1) greenStr2 = "0" + greenStr2;
             temp2 = "#FF" + greenStr2 + "00"
@@ -66,7 +63,6 @@ Page({
             var greenStr3 = ""
             var temp3 = ""
             tempGreen3 = parseInt(255 * (1 - parseInt(f_3 / 360 * 100) * 0.01))
-            console.log(tempGreen3)
             greenStr3 = tempGreen3.toString(16)
             if (greenStr3.length == 1) greenStr3 = "0" + greenStr3;
             temp3 = "#FF" + greenStr3 + "00"

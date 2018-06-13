@@ -24,7 +24,6 @@ Page({
       },
       method: "GET",
       complete: function (res) {
-        console.log(res)
         if (res == null || res.data == null) {
           console.error('网络请求失败');
           return;
@@ -58,9 +57,7 @@ Page({
   },
   showAlart: function(e) {
     var that = this
-   
     var index = parseInt(e.target.id)-1
-    
     wx.showModal({
       title: '取消预约',
       content: '您确定要取消预约？',

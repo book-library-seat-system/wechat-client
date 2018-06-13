@@ -1,10 +1,5 @@
-// pages/reserveConfirm/reserveConfirm.js
 var app = getApp()
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
     pos:null,
     time:null,
@@ -13,9 +8,6 @@ Page({
     seatid:null
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function (options) {
     var trans = require('../../utils/seatid_trans.js');
     this.setData({
@@ -28,8 +20,6 @@ Page({
   },
 
   reserveSuccess: function() {
-    console.log(this.data.seatid)
-    console.log(typeof(this.data.seatid))
     wx.request({
       url: app.getURL() + "/v1/seat/book",
       method: "POST",

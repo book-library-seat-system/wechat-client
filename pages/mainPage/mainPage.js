@@ -1,3 +1,4 @@
+var app = getApp()
 Page({
   data: {
     dates: '',
@@ -19,7 +20,6 @@ Page({
     
     var d1 = t.formatTime(new Date())
     var d2 = t.formatTime(tomorrow_date)
-    console.log(d1)
 
     this.setData({
       dates: d1.substring(0, 10),
@@ -30,7 +30,6 @@ Page({
   },
   bindStartTimeChange: function (e) {
     var temp = e.detail.value[0] + e.detail.value[1] + ":00"
-    console.log(temp)
     this.setData({
       startTimes: temp,
     })
@@ -44,13 +43,11 @@ Page({
   },
 
   bindDateChange: function (e) {
-    console.log(e.detail.value)
     this.setData({
       dates: e.detail.value
     })
   },
   bindPickerChange: function (e) {
-    console.log(e.detail.value)
     this.setData({
       index: e.detail.value
     })
@@ -89,7 +86,7 @@ Page({
           method: "POST",
           data: {
             openID: app.getOpenid(),
-            seatID: res.result
+            seatID: parseInt(res.result)
           },
 
           complete: function (res) {
@@ -104,7 +101,7 @@ Page({
               })
             } else {
               wx.showModal({
-                title: '签到错误',
+                title: '签到失败',
                 content: res.data.errorinformation,
               })
             }
